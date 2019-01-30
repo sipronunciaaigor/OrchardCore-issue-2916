@@ -1,0 +1,24 @@
+﻿<section class="wrapper wrapper-main-menu">
+    <a class="logo" href="/">@Model.SiteName</a>
+    <label class="hidden-gt-medium hamburger-menu btn-hamburger-menu" for="show-mobile-menu">
+        <span class="hamburger-menu-text">Menu</span>
+        <span class="hamburger-menu-glyphs">
+            <span class="hamburger-menu-horizontal-bar"></span>
+            <span class="hamburger-menu-horizontal-bar"></span>
+            <span class="hamburger-menu-horizontal-bar"></span>
+        </span>
+    </label>
+</section>
+<input type="checkbox" id="show-mobile-menu" class="hidden" />
+<section class="wrapper wrapper-login">
+    @*@await DisplayAsync(await New.Menu(ContentItemId: "main-menu"))*@
+    @Html.Partial("_LoginMenu")
+    @*<menu alias="alias:main-menu" cache-id="main-menu" cache-duration="00:05:00" cache-tag="alias:main-menu" />*@
+    <div class="clearer"></div>
+</section>
+
+<section class="wrapper wrapper-search">
+    @* TODO: find a way to use shared foledr...*@
+    @Html.Partial("_SearchBar")
+    <div class="clearer"></div>
+</section><!--/.nav-collapse -->

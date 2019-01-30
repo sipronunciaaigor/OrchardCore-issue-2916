@@ -1,0 +1,25 @@
+﻿<form asp-route-area="OrchardCore.Users" asp-controller="Account" asp-action="LogOff" method="post">
+    <ul class="dropdown">
+        <li>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <span class="btn-dropdown">@User.Identity.Name<b class="caret"></b></span>
+                <ul class="dropdown-content">
+                    <li><a asp-route-area="OrchardCore.Admin" asp-controller="Admin" asp-action="Index">@T["Dashboard"]</a></li>
+                    <li><a asp-route-area="OrchardCore.Users" asp-controller="Account" asp-action="ChangePassword">@T["Change Password"]</a></li>
+                    <li>
+                        <button type="submit">@T["Log off"]</button>
+                    </li>
+                </ul>
+            }
+            else
+            {
+                <span class="btn-dropdown">User<b class="caret"></b></span>
+                <ul class="dropdown-content">
+                    <li><a asp-route-area="OrchardCore.Users" asp-controller="Account" asp-action="Login">@T["Log in"]</a></li>
+                    <li><a href="/ForgotPassword">@T["Recover Password"]</a></li>
+                </ul>
+            }
+        <li>
+    </ul>
+</form>

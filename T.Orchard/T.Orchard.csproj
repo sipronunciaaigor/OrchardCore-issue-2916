@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp2.2</TargetFramework>
+		<UserSecretsId>58f9a2c3-7d11-4ba0-8c73-5ff776ef407f</UserSecretsId>
+		<PreserveCompilationContext>true</PreserveCompilationContext>
+		<MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+		<MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>
+		<ApplicationInsightsResourceId>/subscriptions/077e58f0-6865-46eb-a93a-7fd3331d923e/resourcegroups/soccerdb/providers/microsoft.insights/components/soccerdb</ApplicationInsightsResourceId>
+		<ApplicationInsightsAnnotationResourceId>/subscriptions/077e58f0-6865-46eb-a93a-7fd3331d923e/resourcegroups/soccerdb/providers/microsoft.insights/components/soccerdb</ApplicationInsightsAnnotationResourceId>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="App_Data_prod\**" />
+	  <Compile Remove="App_Data_\**" />
+	  <Content Remove="App_Data_prod\**" />
+	  <Content Remove="App_Data_\**" />
+	  <EmbeddedResource Remove="App_Data_prod\**" />
+	  <EmbeddedResource Remove="App_Data_\**" />
+	  <None Remove="App_Data_prod\**" />
+	  <None Remove="App_Data_\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="Properties\PublishProfiles\FolderProfile.pubxml" />
+		<None Remove="Properties\PublishProfiles\SDBOrchard - FTP.pubxml" />
+		<None Remove="Properties\PublishProfiles\SDBOrchard - Web Deploy.pubxml" />
+		<None Remove="Properties\PublishProfiles\SDBOrchard2 - Web Deploy.pubxml" />
+		<None Remove="Properties\PublishProfiles\soccerdb - FTP.pubxml" />
+		<None Remove="Properties\PublishProfiles\soccerdb - Web Deploy.pubxml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Properties\PublishProfiles\" />
+		<Folder Include="wwwroot\js\" />
+		<Folder Include="wwwroot\css\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.6.0-beta3" />
+		<PackageReference Include="Microsoft.AspNetCore.App" />
+		<PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.0.0-beta3-70564" />
+		<PackageReference Include="OrchardCore.Localization" Version="1.0.0-beta3-70564" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\T.Configuration\Test.Configuration.csproj" />
+	  <ProjectReference Include="..\T.Modules.Entities\Test.Modules.Entities.csproj" />
+	  <ProjectReference Include="..\T.Theme\Theme.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <WCFMetadata Include="Connected Services" />
+	</ItemGroup>
+
+	<ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

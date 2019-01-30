@@ -1,0 +1,5 @@
+Name: MyOwnTheme
+AntiForgery: enabled
+Author: Fabrizio Di Pietro
+Website: http://www.mywebsite.net
+Description: My default Theme

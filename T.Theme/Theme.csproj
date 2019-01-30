@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+	  <!--<RuntimeFrameworkVersion>2.1.1</RuntimeFrameworkVersion>
+	  <PreserveCompilationContext>true</PreserveCompilationContext>
+	  <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+	  <MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>-->
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Recipes\**" />
+		<EmbeddedResource Remove="Recipes\**" />
+		<None Remove="Recipes\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+		<PackageReference Include="OrchardCore.ContentManagement" Version="1.0.0-beta3-70564" />
+		<PackageReference Include="OrchardCore.DisplayManagement" Version="1.0.0-beta3-70564" />
+		<PackageReference Include="OrchardCore.Localization" Version="1.0.0-beta3-70564" />
+		<PackageReference Include="OrchardCore.ResourceManagement" Version="1.0.0-beta3-70564" />
+		<PackageReference Include="OrchardCore.Theme.Targets" Version="1.0.0-beta3-70564" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Views\_SearchBar.cshtml">
+			<PackagePath>assets\$(PackageId)\</PackagePath>
+		</None>
+	</ItemGroup>
+
+</Project>
